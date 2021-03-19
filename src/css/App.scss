@@ -1,61 +1,36 @@
-@import url('https://fonts.google.com/specimen/Kumbh+Sans');
+@import "./blocks/globals";
+@import "./blocks/mobile";
 
-$font-stack: Kumbh Sans, Arial, Ubuntu, sans-serif;
-$font-size: 12px;
-$color-red: hsl(14, 88%, 65%);
-$color-blue-title: hsl(238, 29%, 16%);
-$color-dark-blue: hsl(237, 12%, 33%);
-$color-gray-blue: hsl(240, 6%, 50%);
-$color-grey-divider: hsl(240, 5%, 91%);
-$body-width: 1440px;
-$body-width-mobile: 375px;
+#box {
+  position: absolute;
+  z-index: 2;
+  left: -8em;
+  bottom: 11em;
 
-html {
-  display: flex;
-  justify-content: center;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
-body {
-  font-family: $font-stack;
-  font-size: $font-size;
-  background: hsl(240, 73%, 65%) linear-gradient(0deg, hsl(240, 73%, 65%) 0%, hsl(273, 75%, 66%) 100%) no-repeat;
-  background-size: cover;
-  width: $body-width;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-main {
-  background-image: url("../images/bg-pattern-desktop.svg");
-  background-size: 70%;
-  background-position: -120% 50%;
-  background-repeat: no-repeat;
-  width: 80%;
-  height: 60%;
-  background-color: #fff;
-  border-radius: 2em;
-  box-shadow: 0.5em 1em 3em $color-dark-blue;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }
 }
 
 .svg {
   display: flex;
   align-items: flex-end;
   position: relative;
-
-  #box {
-
-  }
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 
   #desktop {
-
+    position: absolute;
+    bottom: 7em;
+    left: -7em;
   }
 }
 
@@ -64,21 +39,24 @@ main {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  width: 40%;
+  //max-width: 40%;
+  min-width: 40%;
 
-  margin: {
-    top: 5em;
-  }
+  padding-right: 10em;
+  margin-top: 3em;
+}
 
-  h1 {
-    font-size: 2rem;
-    margin: 0;
-  }
+#root {
+  width: 100%;
 }
 
 .item {
   border-bottom: 1px $color-grey-divider solid;
   width: 100%;
+  padding: {
+    top: 0.5em;
+    bottom: 0.5em;
+  }
 }
 
 .title {
@@ -91,9 +69,16 @@ main {
   font-size: 1em;
   color: $color-dark-blue;
   opacity: 90%;
+  font-weight: 400;
+
+  &.selected {
+    opacity: 100%;
+    color: $color-blue-title;
+  }
 
   h2:hover {
     color: $color-red;
+    opacity: 100%;
   }
 
   span {
@@ -105,21 +90,10 @@ main {
   width: 100%;
 
   p {
-    width: 100%;
+    width: 25em;
     font-size: 1rem;
+    line-height: 1.5em;
     color: $color-gray-blue;
-  }
-}
-
-.chevron {
-
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 1em;
-  a {
-    color: hsl(228, 45%, 44%);
+    padding-right: 5em;
   }
 }

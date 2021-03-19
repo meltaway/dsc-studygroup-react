@@ -1,4 +1,5 @@
 @import url("https://fonts.google.com/specimen/Kumbh+Sans");
+@import url("https://fonts.google.com/specimen/Kumbh+Sans");
 html {
   display: flex;
   justify-content: center;
@@ -18,7 +19,7 @@ body {
 }
 
 main {
-  background-image: url("../images/bg-pattern-desktop.svg");
+  background-image: url("../../images/bg-pattern-desktop.svg");
   background-size: 70%;
   background-position: -120% 50%;
   background-repeat: no-repeat;
@@ -30,29 +31,139 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2em;
+  color: #fff;
+}
+.attribution a {
+  color: #3e52a3;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    width: 375px;
+    font-size: 0.5em;
+  }
+
+  main {
+    width: 90%;
+    height: 70%;
+    background-position: 50% -38%;
+    margin-top: 2em;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1em 3em #4a4b5e;
+    overflow: visible;
+  }
+
+  .faq {
+    justify-content: center;
+    margin-top: -2em !important;
+    padding-right: 2em !important;
+    padding-left: 2em;
+    position: absolute;
+    bottom: 9em;
+    height: 80%;
+  }
+  .faq h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    height: 6em;
+  }
+
+  .svg {
+    overflow: visible !important;
+    height: 30% !important;
+  }
+  .svg #desktop {
+    bottom: 1em !important;
+    left: -9.5em !important;
+    transform: scale(0.5);
+  }
+
+  #box {
+    transform: scale(0.5) !important;
+    height: 150px;
+    width: 150px;
+    left: -1em !important;
+    top: -11em !important;
+  }
+
+  p {
+    width: 20em !important;
+    font-size: 0.7rem !important;
+    line-height: 1em;
+    color: #787887;
+    padding-right: 5em;
+  }
+}
+#box {
+  position: absolute;
+  z-index: 2;
+  left: -8em;
+  bottom: 11em;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
 .svg {
   display: flex;
   align-items: flex-end;
   position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
+.svg #desktop {
+  position: absolute;
+  bottom: 7em;
+  left: -7em;
+}
+
 .faq {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  width: 40%;
-  margin-top: 5em;
+  min-width: 40%;
+  padding-right: 10em;
+  margin-top: 3em;
 }
-.faq h1 {
-  font-size: 2rem;
-  margin: 0;
+
+#root {
+  width: 100%;
 }
 
 .item {
   border-bottom: 1px #e7e7e9 solid;
   width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .title {
@@ -65,9 +176,15 @@ main {
   font-size: 1em;
   color: #4a4b5e;
   opacity: 90%;
+  font-weight: 400;
+}
+.title.selected {
+  opacity: 100%;
+  color: #1d1e35;
 }
 .title h2:hover {
   color: #f47c57;
+  opacity: 100%;
 }
 .title span {
   margin-right: 1.5rem;
@@ -77,18 +194,11 @@ main {
   width: 100%;
 }
 .dropdown p {
-  width: 100%;
+  width: 25em;
   font-size: 1rem;
+  line-height: 1.5em;
   color: #787887;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 1em;
-}
-.attribution a {
-  color: #3e52a3;
+  padding-right: 5em;
 }
 
 /*# sourceMappingURL=App.css.map */
