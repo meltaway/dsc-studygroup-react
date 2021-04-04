@@ -1,9 +1,99 @@
+@import "./blocks/globals";
+@import "./blocks/mobile";
 
+#box {
+  position: absolute;
+  z-index: 2;
+  left: -8em;
+  bottom: 11em;
 
-.attribution {
-  font-size: 11px;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }
+}
+
+.svg {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  #desktop {
+    position: absolute;
+    bottom: 7em;
+    left: -7em;
+  }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  //max-width: 40%;
+  min-width: 40%;
+
+  padding-right: 10em;
+  margin-top: 3em;
+}
+
+#root {
+  width: 100%;
+}
+
+.item {
+  border-bottom: 1px $color-grey-divider solid;
+  width: 100%;
+  padding: {
+    top: 0.5em;
+    bottom: 0.5em;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   text-align: center;
-  a {
-    color: hsl(228, 45%, 44%);
+  cursor: pointer;
+  font-size: 1em;
+  color: $color-dark-blue;
+  opacity: 90%;
+  font-weight: 400;
+
+  &.selected {
+    opacity: 100%;
+    color: $color-blue-title;
+  }
+
+  h2:hover {
+    color: $color-red;
+    opacity: 100%;
+  }
+
+  span {
+    margin-right: 1.5rem;
+  }
+}
+
+.dropdown {
+  width: 100%;
+
+  p {
+    width: 25em;
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: $color-gray-blue;
+    padding-right: 5em;
   }
 }

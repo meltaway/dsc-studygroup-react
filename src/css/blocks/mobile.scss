@@ -1,0 +1,69 @@
+@import "variables";
+
+@media only screen and (max-width: $body-width-mobile) {
+  body {
+    width: $body-width-mobile;
+    font-size: 0.5em;
+  }
+
+  main {
+    width: 90%;
+    height: 70%;
+    background-position: 50% -38%;
+    margin-top: 2em;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    box-shadow: 0 1em 3em $color-dark-blue;
+    overflow: visible;
+  }
+
+  .faq {
+    justify-content: center;
+    margin-top: -2em !important;
+    padding: {
+      right: 2em !important;
+      left: 2em;
+    }
+    position: absolute;
+    bottom: 9em;
+    height: 80%;
+
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .title {
+    height: 6em;
+  }
+
+  .svg {
+    overflow: visible !important;
+    height: 30% !important;
+
+    #desktop {
+      bottom: 1em !important;
+      left: -9.5em !important;
+      transform: scale(0.5);
+    }
+  }
+
+  #box {
+    transform: scale(0.5) !important;
+    height: 150px;
+    width: 150px;
+
+    left: -1em !important;
+    top: -11em !important;
+  }
+
+  p {
+    width: 20em !important;
+    font-size: 0.7rem !important;
+    line-height: 1em;
+    color: $color-gray-blue;
+    padding-right: 5em;
+  }
+}
